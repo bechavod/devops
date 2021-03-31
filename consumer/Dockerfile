@@ -1,5 +1,6 @@
 FROM python:2.7-onbuild
 ENV PYTHONPATH /usr/src/app
+COPY requirements.txt ./
 COPY requirements.txt ./usr/src/app/requirements.txt
 COPY consumer.py ./usr/src/app/consumer.py
 WORKDIR /usr/src/app
