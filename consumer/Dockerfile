@@ -1,7 +1,8 @@
 FROM python:2.7-onbuild
 ENV PYTHONPATH /usr/src/app
-COPY requirements.txt ../
+ADD ./consumer/requirements.txt ./usr/src/app/
 COPY requirements.txt ./usr/src/app/requirements.txt
+ADD ./consumer/consumer.py ./usr/src/app/
 COPY consumer.py ./usr/src/app/consumer.py
 WORKDIR /usr/src/app
 RUN pip install -r /usr/src/app/requirements.txt
